@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background: #eee;
+}
+body{
+    min-width: 320px; /* min-width: 设置当前元素最小的宽度*/
+    max-width: 100%; /* max-width: 设置当前元素最大的宽度*/
+    margin: 0 auto;
+    background: #fff;
+    font-size:62.5%;
+}
+/*************
+    头部
+***********/
+.header{
+    overflow: hidden;
+}
+.header>img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+/*************
+    中间
+***********/
+.main{
+    color: #fff;
+    font-size:13px;
+}
+.main>.section{
+    display: flex;
+    height: 100px;
+    margin: 4px 2px 4px 2px;
+    background: skyblue;
+}
+.main>.section>.col{
+    flex: 1;
+    border-left: 1px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+    background: #ff5555;
+}
+.main>.section:nth-child(2)>.col{
+    background: #00a7f7;
+}
+.main>.section:nth-child(3)>.col{
+    background: #7cb832;
+}
+.main>.section:nth-child(4)>.col{
+    background: #ff9900;
+}
+.main>.section>.col:nth-child(1){
+    border-left: none;
+}
+.section>.hotel>p{
+    margin: 15px 0;
+}
+.section>.hotel>img{
+    width: 42px;
+    height: 46px;
+}
+.main>.section>.col>div{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+.main>.section>.col>div:last-child{
+    border-bottom: none;
+}
+.main>.section:last-child{
+    height: 50px;
+    line-height: 50px;
+}
+
+/*************
+    底部导航
+***********/
+.nav{
+    background: #ccc;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+}
+.nav>ul{
+    display: flex;
+    list-style: none;
+    background: #fff;
+}
+.nav>ul>li{
+    flex: 1;
+    height: 5rem;
+    text-align: center;
+    font-size:1.3rem;
+}
+.nav>ul>li>i{
+    margin-top: 12px;
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    background: url("./../images/icons.png") no-repeat;
+    background-position: -35px -12px;
+}
+.nav>.nav-top>li:nth-child(2)>i{
+    background-position: -124px -12px;
+}
+.nav>.nav-top>li:nth-child(3)>i{
+    background-position: -212px -12px;
+}
+.nav>.nav-top>li:nth-child(4)>i{
+    background-position: -300px -79px;
+}
+.nav>.nav-bottom>li:nth-child(1)>i{
+    background-position: -300px -79px;
+}
+.nav>.nav-bottom>li:nth-child(2)>i{
+    background: url("./../images/youlun.png") no-repeat;
+    background-position: 3px 6px;
+}
+.nav>.nav-bottom>li:nth-child(3)>i{
+    background-position: -212px -79px;
+}
+.nav>.nav-bottom>li:nth-child(1)>i{
+    background-position: -300px -12px;
+}
+.nav>ul>li>p{
+    color: #666;
+    font-size: 12px;
+}
+
+/*******************
+        引导
+*********************/
+.guide{
+    display: flex;
+    height: 6rem;
+    background: #fff;
+    align-items: center;
+}
+.guide>div{
+    flex: 1;
+    text-align: center;
+}
+.guide>div>i{
+    margin-top: 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #666;
+    border-radius: 50%;
+}
+.guide>div:nth-child(1)>i{
+    font-size: 30px;
+}
+.guide>div:nth-child(2)>i{
+    font-size: 20px;
+}
+.guide>div:nth-child(3)>i{
+    font-size: 25px;
+}
+.guide>div>p{
+    color: #666;
+    font-size: 12px;
+}
+
+/*******************
+        底部
+*********************/
+.footer{
+    height: 50px;
+    background: #EEEEEE;
+    display: flex;
+    font-size:0.8rem;
+    padding:1rem 2rem;
+    align-items: center;
+}
+.footer>p{
+    color: #666;
+}
+.footer>p:first-child{
+    margin-right:1rem;
+}
+.footer>p>a{
+    text-decoration: none;
+    color: #000;
+}
+

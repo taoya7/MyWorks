@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app {
+            width:650px;
+            margin:auto;
+        }
+        .input {
+            padding-left:20px;
+        }
+        .input>div {
+            margin-top:30px;
+        }
+        .add {
+            padding:10px 30px;
+            margin-top:20px;
+            margin-bottom:20px;
+            background:#fdc57b;
+            border:none;
+
+        }
+        /*表格*/
+        table {
+            width:650px;
+            text-align: center;
+            margin-top:50px;
+            border:1px solid black;
+        }
+        table tr:first-child {
+            background:#82acff;
+            height:36px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <fieldset>
+        <legend>学生信息录入</legend>
+        <div class="input">
+            <div>
+                <label>
+                    姓名:
+                    <input type="text" v-model="Student.name">
+                    <br>
+                </label>
+            </div>
+            <div>
+                <label>
+                    年龄:
+                    <input type="text" v-model="Student.age">
+                    <br>
+                </label>
+            </div>
+            <div>
+                <label>
+                    性别:
+                    <select v-model="Student.sex">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <br>
+                </label>
+            </div>
+            <div>
+                <label>
+                    手机:
+                    <input type="text" v-model="Student.phone">
+                    <br>
+                </label>
+            </div>
+            <button type="submit" class="add" @click="createPer">添加</button>
+        </div>
+    </fieldset>
+
+
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>手机号</td>
+            <td>删除</td>
+        </tr>
+        <tr v-for="(per,index) in persons">
+            <td>{{per.name}}</td>
+            <td>{{per.age}}</td>
+            <td>{{per.sex}}</td>
+            <td>{{per.phone}}</td>
+            <td>
+                <button @click="delPer(index)">删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script src="Vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            persons:[
+                {name:"Tashi", age:20, sex:"男",phone:"18735673472"}
+            ],
+            Student:{name:null, age:null, sex:"男",phone:null},
+        },
+        methods:{
+            //创建学生
+            createPer:function(){
+                if(this.Student.name==null && this.Student.age<=0 && this.phone==null){
+                    return;
+                }
+                //添加记录
+                this.persons.unshift(this.Student);
+                //清空数据
+                this.Student = {name:null, age:null, sex:null,phone:null};
+            },
+            //删除记录
+            delPer:function(index){
+                console.log(index);
+                this.persons.splice(index,1);
+            }
+        }
+
+    })
+</script>
+</body>
+</html>
